@@ -1,23 +1,32 @@
 from random import *
-num, flag = randint(1, 100), False
-while flag == False:
-    the_input = int(input('Угадайте загаданное число:  '))
-    if the_input < num:
+
+def number():
+    num = randint(1, 100)
+    return num
+
+random_number = number()
+
+while True:
+    user_input = int(input('Угадайте загаданное число:  '))
+
+    if user_input < random_number:
         print('Слишком мало, попробуйте еще раз\n')
         continue
 
-    elif the_input > num:
+    elif user_input > random_number:
         print('Слишком много, попробуйте еще раз\n')
         continue
 
-    elif the_input == num:
+    elif user_input == random_number:
         print('Вы угадали, поздравляем!')
-        repeat = input('\nВведите "Ещё", чтобы сыграть ещё раз или "Выход", чтобы закрыть игру:  ')
-        while repeat != 'Ещё' or repeat != 'Выход':
+        while True:
             repeat = input('\nВведите "Ещё", чтобы сыграть ещё раз или "Выход", чтобы закрыть игру:  ')
             if repeat == 'Ещё':
                 print()
                 break
+
             elif repeat == 'Выход':
-                flag = True
                 exit()
+                
+        random_number = number()
+        continue
