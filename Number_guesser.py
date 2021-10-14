@@ -21,8 +21,8 @@ def cls():
         
 
 random_number, counter, best_score = number(), 1, 9999
-one_more_time = ['Ещё', 'Еще', 'ещё', 'еще', 'ЕЩЁ', 'ЕЩЕ', 'ЕЩё', 'ЕЩе', 'еЩЁ', 'еЩЕ', 'To~', 'Tot', 'TOT', 'tot', 'TO`', 'TOt', 'tO`', 'tOT']
-the_exit = ['Выход', 'ВЫход', 'выход', 'ВЫХОД', 'Ds[jl', 'DS[jl', 'ds[jl', 'DS[JL']
+one_more_time = ['ещё', 'еще', 'to~','tot']
+the_exit = ['выход','ds[jl']
 print('Добро пожаловать в числовую угадайку!\n')
 sleep(2)
 
@@ -52,11 +52,11 @@ while True:
         print('\nВы угадали, поздравляем!\nБыло потрачено', counter, 'попыток.\tРекорд:', best_score, 'попыток')
         while True:
             repeat = input('\nВведите "Ещё", чтобы сыграть ещё раз или "Выход", чтобы закрыть игру:  ')
-            if repeat in one_more_time:
+            if repeat.lower() in one_more_time:
                 print()
                 break
 
-            elif repeat in the_exit:
+            elif repeat.lower() in the_exit:
                 exit()
                 
                 
